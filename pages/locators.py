@@ -16,3 +16,4 @@ class Locators:
         By.XPATH,
         "//h2[contains(text(),'Работаем')]/ ../..//div[2]//img",
     )
+

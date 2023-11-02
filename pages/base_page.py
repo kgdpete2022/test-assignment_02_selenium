@@ -1,28 +1,23 @@
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait as Wait
 
 
 class BasePage:
-    def __init__(self, driver, url, timeout=10):
+    def __init__(self, driver, url):
         self.driver = driver
         self.url = url
-        self.driver.implicitly_wait(timeout)
 
     def open(self):
         self.driver.get(self.url)
 
-    def select_element(self, locator, value):
-        return self.driver.find_element(locator, value)
+    def element_is_visible(self, locator, timeout=5):
+        return Wait(self.driver, timeout).until(
+            EC.visibility_of_element_located(locator),
+            message=f"Can't find element by locator {locator}",
+        )
 
-    def select_elements(self, locator, value):
-        return self.driver.find_elements(locator, value)
-
-    def is_element_present(self, locator, value):
-        try:
-            self.select_element(locator, value)
-        except NoSuchElementException:
-            return False
-        return True
-
-    def is_url_correct(self, url):
-        return self.driver.current_url == url
+    def elements_are_visible(self, locator, timeout=5):
+        return Wait(self.driver, timeout).until(
+            EC.visibility_of_all_elements_located(locator),
+            message=f"Can't find elements by locator {locator}",
+        )
