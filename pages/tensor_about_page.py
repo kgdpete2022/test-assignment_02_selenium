@@ -15,3 +15,10 @@ class TensorAboutPage(BasePage):
         return self.elements_are_visible(
             TensorAboutPageLocators.LOCATOR_WORK_IMAGES
         )
+
+    def work_images_dimensions_are_equal(self):
+        images = self.find_work_images()
+        dimensions = {
+            (img.size["width"], img.size["height"]) for img in images
+        }
+        return len(dimensions) == 1

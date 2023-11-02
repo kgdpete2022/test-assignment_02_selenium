@@ -27,6 +27,17 @@ class SbisContactsPage(BasePage):
             SbisContactsPageLocators.LOCATOR_TENSOR_BANNER
         )
 
+    def go_to_tensor_main_page_using_banner(self):
+        tensor_banner = self.find_tensor_banner()
+        tensor_banner.click()
+
+        cur_window = self.driver.current_window_handle
+
+        for w in self.driver.window_handles:
+            if w != cur_window:
+                self.driver.switch_to.window(w)
+                break
+
     def find_identified_region(self):
         return self.element_is_visible(SbisContactsPageLocators.LOCATOR_REGION)
 

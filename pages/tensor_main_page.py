@@ -17,7 +17,9 @@ class TensorMainPageLocators:
 
 class TensorMainPage(BasePage):
     def find_strength_in_the_people_block(self):
-        self.element_is_visible(TensorMainPageLocators.LOCATOR_PEOPLE_BLOCK)
+        return self.element_is_visible(
+            TensorMainPageLocators.LOCATOR_PEOPLE_BLOCK
+        )
 
     def follow_strength_in_the_people_block_details_link(self):
         details_link = self.element_is_visible(
