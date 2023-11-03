@@ -17,4 +17,5 @@ class TestScenarioThree:
         time.sleep(2)
         page = SbisDownloadPage(driver, driver.current_url)
         page.go_to_sbis_plugin_tab()
+        page.download_sbis_plugin()
         time.sleep(2)

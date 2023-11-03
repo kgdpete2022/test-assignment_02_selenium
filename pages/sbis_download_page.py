@@ -1,3 +1,5 @@
+import os
+
 from selenium.webdriver.common.by import By
 
 from .base_page import BasePage
@@ -39,3 +41,6 @@ class SbisDownloadPage(BasePage):
         self.find_sbis_plugin_download_link().click()
         # alert = self.driver.switch_to_alert()
         # alert.accept()
+
+    def get_size_of_downloaded_file(self):
+        pass

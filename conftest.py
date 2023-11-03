@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -9,7 +11,7 @@ def driver():
     options = webdriver.ChromeOptions()
 
     prefs = {
-        "download.default_directory": "C:\\Users\\user\\YandexDisk\\WEBDEV\\TEST_ASSIGNMENTS\\test-assignment_02_selenium\\tests\\",
+        "download.default_directory": f"{os.getcwd()}\\tests\\",
         "safebrowsing.enabled": False,
     }
     options.add_experimental_option("prefs", prefs)
