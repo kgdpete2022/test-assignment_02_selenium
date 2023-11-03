@@ -8,7 +8,7 @@ Note: Scenarios 1 and 2 work as planned, scenario 3 hasn't been completed as Chr
 1. Clone the repository to your computer:
 
 '''
-git clone git@github.com:kgdpete2022/foodgram-project-react.git
+git https://github.com/kgdpete2022/test-assignment_02_selenium.git
 '''
 
 2. Setup and run the virtual environment:
@@ -19,10 +19,9 @@ source venv/Scripts/activate
 '''
 
 3. Install dependencies:
-
-'''
+```
 pip install requirements.txt
-'''
+```
 
 4. Run pytest:
 
