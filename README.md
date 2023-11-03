@@ -6,22 +6,26 @@ Note: Scenarios 1 and 2 work as planned, scenario 3 hasn't been completed as Chr
 ## To install and run
 
 1. Clone the repository to your computer:
+
 '''
 git clone git@github.com:kgdpete2022/foodgram-project-react.git
 '''
 
 2. Setup and run the virtual environment:
+
 '''
 python -m venv venv
 source venv/Scripts/activate
 '''
 
 3. Install dependencies:
+
 '''
 pip install requirements.txt
 '''
 
 4. Run pytest:
+
 '''
 pytest <tests/filename>
 '''
